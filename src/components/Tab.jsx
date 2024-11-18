@@ -1,10 +1,26 @@
 import "./Tabs.css";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Tabs = ({ tabs }) => {
   const [selectedTab, setSelectedTab] = useState(0);
+  const [indicatorStyle, setIndicatorStyle] = useState({});
   const tabsRef = useRef([]);
+  useEffect(() => {
+    updateIndicator(selectedTab);
+  }, [selectedTab]);
+
+  const updateIndicator = (index) => {
+    const currentTab = tabsRef.current[index];
+    if (currentTab) {
+      const { offsetWidth, offsetLeft } = currentTab;
+      setIndicatorStyle({
+        width: `${offsetWidth}px`,
+        transform: `translateX(${offsetLeft}px)`,
+      });
+      console.log(offsetWidth, offsetLeft)
+    }
+  };
 
   return (
     <div className="tabs-container">
@@ -19,7 +35,7 @@ const Tabs = ({ tabs }) => {
             {tab}
           </div>
         ))}
-        
+        <div className="indicator" style={indicatorStyle}></div>
       </div>
     </div>
   );

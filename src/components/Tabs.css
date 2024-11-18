@@ -35,6 +35,22 @@
     color: #fff; 
     z-index: 2; /* Ensure active tab is on top of the indicator */
   }
+
+
+  .indicator {
+    position: absolute;
+    height: 40px; 
+    bottom: 0;
+    left: 0;
+    border-radius: 12px; 
+    width: 0;
+    transform: translateX(0);
+    transition: transform 0.3s ease, width 0.3s ease, box-shadow 0.3s ease;
+    background: transparent; 
+    border: 2px solid #007bff; 
+    box-shadow: 0 0 15px 2px rgba(0, 123, 255, 0.6), 0 0 30px 4px rgba(0, 123, 255, 0.4);
+    z-index: 1; /* Ensure indicator is behind the text */
+  }
   
  
   
