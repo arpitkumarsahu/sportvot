@@ -18,7 +18,7 @@ const Tabs = ({ tabs }) => {
         width: `${offsetWidth}px`,
         transform: `translateX(${offsetLeft}px)`,
       });
-      console.log(offsetWidth, offsetLeft)
+      
     }
   };
 
