@@ -2,7 +2,7 @@ import React from "react";
 import Tabs from "./components/Tab";
 
 const App = () => {
-  const tabs = ["largerTextTabTest","Kabaddi", "Football", "Cricket", "Basketball", "Volleyball", "Others" , "low"]
+  const tabs = ["Kabaddi", "Football", "Cricket", "Basketball", "Volleyball", "Others" ]
 
   return (
     <div>
